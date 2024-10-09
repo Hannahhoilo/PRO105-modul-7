@@ -1,0 +1,83 @@
+body{
+	margin: 0;
+	/*for å sikre at body bruker høyden
+	ellers blir høyden like høy som innholdet */
+	height: 90vh;
+}
+.red-box-container {
+	position: relative;
+	margin: 50px;
+	border: 5px solid grey;
+	height: 100%;
+}
+.box {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+}
+.red-box {
+	margin: 2rem;
+	background: linear-gradient(45deg, #a2001e, #ff002f, #ff5d7a);
+	border-radius: 50%;
+	top: 150px;
+	left: 0;
+	z-index: 2;
+	/*
+	animation-name: move-red-box;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
+	*/
+	/*shorthand*/
+	animation: move-red-box 1.5s ease-in infinite;
+}
+
+.blue-box {
+	background-color: blue;
+	border-radius: 10%;
+	top: 0;
+	left: 50%;
+	z-index: 1;
+	animation-name: move-blue-box;
+	animation-duration: 2s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards; /*sørger for å stoppe animasjon i stedet for å hoppe tilbake*/
+	animation-delay: 1.8s;
+}
+
+@keyframes move-red-box {
+	0% {
+		top: 150px;
+	}
+	10% {
+		top: 155px;
+	}
+	45% {
+		top: 20px;
+	}
+	50%{
+		top: 10px;
+	}
+	55% {
+		top: 20px;
+	}
+	90% {
+		top: 155px;
+	}
+	100% {
+		top: 150px;;
+	}
+}
+
+@keyframes move-blue-box {
+	0% {
+		top: 0%;
+		left: 55%;
+	}
+	20% {
+		left: 65%;
+	}
+	100% {
+		top: 50%;
+		left: 70%;
+	}
+}
